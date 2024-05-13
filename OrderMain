@@ -1,0 +1,17 @@
+package SolidPrinciple;
+
+public class OrderMain {
+
+    public static void main(String[] args) {
+        Order order = new OrderProc();
+        order.calculateTotal(10.0, 2);
+        order.placeOrder("John Doe", "123 Main St");
+
+        InvoiceGen invoice = new InvoiceProc();
+        SendEmailNotif notification = new NotifProc();
+
+        invoice.generateInvoice("order_123.pdf");
+        notification.sendEmailNotification("johndoe@example.com");
+    }
+
+}
